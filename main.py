@@ -13,8 +13,7 @@ os.environ["OPENAI_API_KEY"] = "None"
 os.environ["OPENAI_API_BASE"] = "http://10.58.0.2:8000/v1"
 llm_completion = ChatOpenAI(model_name="Qwen2.5-14B")
 
-# 初始化嵌入模型
-# llm_chat = ChatOpenAI(model_name="Qwen2.5-14B")
+# 初始化嵌入模型，使用本地模型地址
 embedding = HuggingFaceEmbeddings(model_name="./all-MiniLM-L12-v2")
 
 # 连接到Milvus数据库
