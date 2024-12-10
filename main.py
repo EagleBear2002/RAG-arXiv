@@ -1,7 +1,7 @@
 import json
 import os
 
-from langchain.llms import *
+from langchain_openai import *
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings  # 替换 HuggingFaceEmbeddings
 from langchain.vectorstores import Milvus
@@ -10,31 +10,31 @@ from langchain.schema import HumanMessage
 # 配置大模型API
 os.environ["OPENAI_API_KEY"] = "None"
 os.environ["OPENAI_API_BASE"] = "http://10.58.0.2:8000/v1"
-llm_completion = OpenAI(model_name="Qwen2.5-14B")
+llm_completion = ChatOpenAI(model_name="Qwen2.5-14B")
 
 # 初始化嵌入模型
 # llm_chat = ChatOpenAI(model_name="Qwen2.5-14B")
-embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L12-v2")
+embedding = HuggingFaceEmbeddings(model_name="./all-MiniLM-L12-v2")
 
 # 连接到Milvus数据库
 db = Milvus(embedding_function=embedding, collection_name="arXiv",
             connection_args={"host": "10.58.0.2", "port": "19530"})
 
 
-def translate_to_english(text):
-    translation_prompt = f"请将以下中文翻译成英文: {text}"
-    translation_result = llm_completion.invoke([HumanMessage(content=translation_prompt)])
-    return translation_result.content
+# def translate_to_english(text):
+#     translation_prompt = f"请将以下中文翻译成英文: {text}"
+#     translation_result = llm_completion.invoke([HumanMessage(content=translation_prompt)])
+#     return translation_result.content
 
 
 def query_abstract(question):
     attempts = 0
     while attempts < 3:
         # 翻译问题为英文
-        english_question = translate_to_english(question)
+        # english_question = translate_to_english(question)
 
         # 优化用户输入提示
-        optimized_prompt = f"Please optimize the following query to better find relevant academic paper abstracts: {english_question}"
+        optimized_prompt = f"Please optimize the following query to better find relevant academic paper abstracts: {question}"
         optimized_query = llm_completion.invoke([HumanMessage(content=optimized_prompt)])
 
         # 获取响应内容
@@ -46,7 +46,7 @@ def query_abstract(question):
         # 检查是否找到相关文档
         if docs:
             best_doc = docs[0]
-            answer_prompt = f"Based on the following paper abstract, answer the question: {best_doc.page_content}\n\nQuestion: {english_question}"
+            answer_prompt = f"Based on the following paper abstract, answer the question: {best_doc.page_content}\n\nQuestion: {question}"
             answer = llm_completion.invoke([HumanMessage(content=answer_prompt)])
             return {
                 "answer": answer.content,
@@ -76,6 +76,6 @@ def answer_questions(questions_file, output_file):
 
 
 if __name__ == "__main__":
-    questions_file = './questions.jsonl'
-    output_file = 'answer.json'
+    questions_file = './question-1.json'
+    output_file = 'answer-1.json'
     answer_questions(questions_file, output_file)

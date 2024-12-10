@@ -1,52 +1,7 @@
 [
     {
         "question": "什么是大语言模型？",
-        "answer": "A Large Language Model (LLM) is a type of artificial intelligence model, typically a deep learning model, that has been trained on a massive amount of text data to generate human-like responses and perform various natural language processing tasks. They are known for their ability to summarize texts, understand context, and generate coherent responses. In the context of the paper, LLMs are proposed as a potential tool for improving the analysis of scientific literature, but they are limited in their ability to handle multimodal elements like molecular structures, tables, and charts that are common in scientific research.",
-        "source": "https://arxiv.org/abs/2403.10301"
-    },
-    {
-        "question": "形式化软件工程是什么？",
-        "answer": "The abstract provided does not specifically define formal software engineering. However, it discusses a dataset for the field of Software Engineering, which likely includes various aspects of the discipline, such as methods, processes, and research output. Formal software engineering typically refers to the application of formal methods, mathematical techniques, and automation to develop, analyze, and verify software systems. It often involves the use of formal languages, models, and proof techniques to ensure correctness, reliability, and security. The dataset mentioned in the abstract contributes to the broader study and analysis of software engineering research but does not delve into formal methods directly.",
-        "source": "https://arxiv.org/abs/2204.03254"
-    },
-    {
-        "question": "大语言模型的缩放定理是什么？",
-        "answer": "The scaling law for large language models suggests a power-law correlation between the model's loss and variables such as model size, dataset size, and computational resources utilized during training. The original OpenAI paper established these principles, but the exact formulas were not fully disclosed, and the conclusions were based on models with up to 1.5 billion parameters. This technical report extends the validity of the scaling law to models up to 33 billion parameters, demonstrating that the constant coefficients in the formulas are experiment-dependent. The authors provide a method to estimate these constants using smaller models and use the estimated formulas to predict test loss, required training steps, optimal batch sizes, and complete loss trajectories for larger models.",
-        "source": "https://arxiv.org/abs/2403.06563"
-    },
-    {
-        "question": "代码评审的目标是什么？",
-        "answer": "The point of code review, as stated in the paper abstract, is to serve as a cornerstone for software quality assurance and a crucial practice in software development. It is a process where code is systematically examined and critiqued by peers to identify and improve defects, maintain consistency, promote best practices, and enhance the overall quality of the codebase. The paper's investigation highlights the importance of empirical evaluation, replication potential, and the use of various methodologies and metrics in code review studies, ultimately suggesting that although a benchmark is not yet feasible, standardizing and sharing practices could facilitate innovation and the adoption of established techniques across the software engineering field.",
-        "source": "https://arxiv.org/abs/1911.08816"
-    },
-    {
-        "question": "重复的数据会对In-content Learning产生什么影响？",
-        "answer": "The paper you provided does not discuss the effect of redundancy on in-context learning. Instead, it focuses on developing paper recommendation algorithms using citation information, with a focus on improving efficiency through relevance feedback and adapting to different tasks like venue and reviewer recommendation. In-context learning, which refers to the ability of large language models to understand and respond based on a given context or prompt, is not the primary subject of this abstract. To address the question about redundancy in in-context learning, you would need to refer to a study specifically examining that topic, which is not found in this given information.",
-        "source": "https://arxiv.org/abs/1205.1143"
-    },
-    {
-        "question": "软件工程领域如何适应不同领域？",
-        "answer": "The paper introduces the General Index of Software Engineering Papers, a comprehensive dataset that enables meta-research in the field of Software Engineering. This dataset allows researchers to analyze the output of software engineering research even when access to papers or scholarly search engines is restricted. To adapt to this resource and take advantage of its potential, software engineering should:\n\n1. Embrace open data: Encourage the use of open datasets like this one to foster transparency and reproducibility in research, making it easier for others to build upon or validate findings.\n\n2. Leverage n-grams and text analysis: Utilize the indexed n-grams to analyze trends, keywords, and topics within the field, which can inform research directions, teaching materials, and software development practices.\n\n3. Promote meta-evaluation: Utilize the dataset for evaluating the quality and impact of software engineering research by comparing the frequency and relevance of certain concepts or methods across papers.\n\n4. Enhance collaboration: Share findings and insights gained from the dataset among researchers, practitioners, and educators to improve the collective understanding and address common challenges.\n\n5. Adapt research methodologies: Develop methods and tools that can process and analyze large datasets efficiently, considering the scale and complexity of the General Index.\n\n6. Ensure data privacy and ethics: Be mindful of data privacy concerns when handling open data and adhere to ethical guidelines when conducting research using such datasets.\n\nOverall, software engineering should adapt by adopting open data practices, utilizing advanced text analysis techniques, and fostering collaboration to improve the field's research and development efforts in the context of this new resource.",
-        "source": "https://arxiv.org/abs/2204.03254"
-    },
-    {
-        "question": "区块链如何保证安全？",
-        "answer": "The provided abstract does not specifically address the security mechanisms of blockchains. However, it mentions that blockchains have attracted attention due to their potential to modernize payment systems and cause a digital revolution. A blockchain is generally considered secure because of its key features:\n\n1. **Decentralization**: It is a distributed ledger, not controlled by a central authority, ensuring no single point of failure and making it difficult to manipulate data.\n\n2. **Immutability**: Once a block is added to the chain, its information cannot be altered retroactively, as it is linked to previous blocks through cryptographic hashes, providing a tamper-proof record.\n\n3. **Cryptography**: Transactions on a blockchain are secured using advanced cryptographic algorithms, such as public-key cryptography, which ensures that only authorized parties can access and validate transactions.\n\n4. **Consensus mechanisms**: Blockchain systems like Bitcoin and Ethereum use consensus algorithms (e.g., Proof of Work or Proof of Stake) to validate transactions, ensuring that all participants agree on the state of the ledger.\n\n5. **Anonymous transactions**: While not completely anonymous, blockchain transactions can be pseudonymous, providing a level of privacy for users.\n\nThese properties together contribute to the perceived security of blockchain technology in the context of payment systems. To understand the technical details of security, one would need to delve into the underlying cryptographic principles and consensus mechanisms.",
-        "source": "https://arxiv.org/abs/2212.03790"
-    },
-    {
-        "question": "指令微调的目标是什么？",
-        "answer": "The paper abstract provided does not mention \"instruction tuning\" or a context related to it. Therefore, based on the information given, there is no direct mention of what instruction tuning might be for in this context. The abstract discusses the analysis of scientific abstracts and their relationship to the main content of research articles, specifically focusing on text re-use and the sections from which abstract sentences are commonly taken. To provide an accurate answer about instruction tuning, more information or a different context is needed.",
-        "source": "https://arxiv.org/abs/1604.02580"
-    },
-    {
-        "question": "离子阱计算机的原理是什么？",
-        "answer": "Ion-trap quantum computers work by utilizing a controlled environment to manipulate individual ions as quantum bits (qubits). These computers exploit the internal energy levels of ions, typically trapped in electromagnetic fields, to encode and process quantum information. \n\nIn the context of the given abstract, the scheme combines ion trap quantum computing, which involves the delicate manipulation of ions' quantum states through laser cooling, trapping, and quantum operations like gate operations, with Grover's quantum search algorithm. This algorithm, originally developed by Lov Grover, enhances the search efficiency in an unsorted database, but in this case, it is employed to prepare a specific quantum state with a high probability接近 one, leveraging the unique properties of trapped ions for quantum computation.",
-        "source": "https://arxiv.org/abs/quant-ph/0005036"
-    },
-    {
-        "question": "人造原子是什么？",
-        "answer": "The provided abstract does not contain information about a \"synthetic atom.\" It discusses the structure of scientific abstracts, text re-use in research articles, and the sections from which abstract sentences are commonly taken, but does not mention synthetic atoms or any related concept from the field of chemistry or materials science. Therefore, based on this abstract, the answer to the question about a synthetic atom cannot be derived.",
-        "source": "https://arxiv.org/abs/1604.02580"
+        "answer": "大语言模型是指一类基于深度学习的自然语言处理模型，这类模型通常具有大量的参数（数十亿甚至更多），能够处理和生成高质量的自然语言文本。它们通过学习大量文本数据中的统计规律和语言结构，从而能够在多种自然语言处理任务中取得优异的表现，比如文本生成、翻译、摘要、问答等。由于其庞大的规模和强大的学习能力，大语言模型可以捕捉到更加复杂和抽象的语言模式，并且在理解上下文和生成流畅自然的文本方面表现出色。",
+        "source": "https://arxiv.org/abs/1510.03021"
     }
 ]
